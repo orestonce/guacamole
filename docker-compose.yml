@@ -6,6 +6,7 @@ services:
       environment:
        - GUACD_LOG_LEVEL=debug
     guacamole:
+      restart: always
       image: guacamole/guacamole
       environment:
        - GUACD_HOSTNAME=guard
@@ -18,10 +19,11 @@ services:
       ports:
        - 8080:8080   
     mysql:
+      restart: always
       build:
-        context: ./
+        context: ./mysql
         target: mysql_db
       environment:
        - MYSQL_ROOT_PASSWORD=password
       volumes:
-        - ./mysql-data/:/var/lib/mysql/
+        - ./mysql/data/:/var/lib/mysql/
