@@ -2,14 +2,17 @@ version: "3.4"
 services:
     guacd:
       restart: always
-      image: guacamole/guacd
+      build:
+        context: ./guacd
       environment:
        - GUACD_LOG_LEVEL=debug
+      volumes:
+       - ./guacd/data:/data   
     guacamole:
       restart: always
       image: guacamole/guacamole
       environment:
-       - GUACD_HOSTNAME=guard
+       - GUACD_HOSTNAME=guacd
        - GUACD_PORT=4822
        - MYSQL_HOSTNAME=mysql
        - MYSQL_PORT=3306
