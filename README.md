@@ -2,7 +2,7 @@
 一键搭建guacamole, 使用mysql作为数据库
 
 * 参考: https://guacamole.apache.org/doc/gug/guacamole-docker.html#guacamole-docker-guacd
-* 参考: https://github.com/dushixiang/next-terminal
+* 中文不乱码，参考: https://github.com/dushixiang/next-terminal
 
 # 用法:
 
